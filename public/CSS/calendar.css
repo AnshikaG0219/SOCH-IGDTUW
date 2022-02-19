@@ -1,18 +1,39 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.outer-calendar{
+    margin: 50px;
+}
+
 #calendar{
     width: 100%;
-    /* position: absolute;
+    /* position: absolute; */
     top: 50%;
     left: 50%;
-    transform: translate(-50%, -50%); */
-    margin: 10vh 0;
+    transform: translate(-50%, -50%);
+
 }
-/* 
+
 *,
 ::after,
 ::before {
     -webkit-box-sizing: border-box;
-    box-sizing: border-box
-} */
+    box-sizing: border-box;
+    content: "\a";
+}
+
+html,
+body {
+    padding: 0;
+    margin: 0
+}
+
+body {
+    font-family: 'Source Sans Pro'
+}
+
 input:focus,
 textarea:focus,
 button:focus {
@@ -71,8 +92,8 @@ button:focus {
     background-color: #8773c1;
     padding: 10px 8px;
     cursor: pointer;
-    -webkit-box-shadow: 5px 0 18px -3px #8773c1;
-    box-shadow: 5px 0 18px -3px #8773c1
+    /* -webkit-box-shadow: 5px 0 18px -3px #8773c1;
+    box-shadow: 5px 0 18px -3px #8773c1 */
 }
 
 .calendar-sidebar>.calendar-year {
@@ -148,7 +169,7 @@ button:focus {
 
 .calendar-inner {
     position: relative;
-    padding: 40px 30px;
+    padding: 20px 15px;
     float: left;
     width: 100%;
     max-width: calc(100% - 600px);
@@ -169,7 +190,7 @@ button:focus {
     left: 0;
     width: 100%;
     height: 100%;
-    background-color: rgba(83, 74, 109, .5)
+    background-color: rgba(255, 87, 127, 0.15);
 }
 
 .sidebar-hide .calendar-inner {
@@ -187,7 +208,7 @@ button:focus {
 
 .calendar-inner .calendar-table {
     border-collapse: collapse;
-    /* font-size: 20px; */
+    font-size: 20px;
     width: 100%;
     -webkit-user-select: none;
     -moz-user-select: none;
@@ -201,7 +222,8 @@ th[colspan="7"] {
     text-transform: uppercase;
     font-weight: 600;
     font-size: 30px;
-    color: #8773c1
+    color: #8773c1;
+    padding: 10px;
 }
 
 th[colspan="7"]::after {
@@ -229,12 +251,10 @@ tr.calendar-body .calendar-day {
 
 tr.calendar-body .calendar-day .day {
     position: relative;
-    /* padding: 15px; */
-    padding-top: 5px;
-    height: 25px;
-    width: 25px;
+    padding: 15px;
+    height: 60px;
+    width: 60px;
     margin: 0 auto;
-    font-size: 2vh;
     border-radius: 50%;
     text-align: center;
     color: #5a5a5a;
@@ -314,9 +334,10 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 
 .calendar-events>.event-header>p {
-    font-size: 30px;
+    font-size: 25px;
     font-weight: 600;
-    color: #5a5a5a
+    color: #6f69ac;
+    padding: 0px 15px 10px 5px;
 }
 
 #eventListToggler {
@@ -342,12 +363,12 @@ tr.calendar-body .calendar-day .day[disabled] {
 .event-list>.event-empty {
     padding: 15px 10px;
     background-color: rgba(135, 115, 193, .15);
-    border: 1px solid #8773c1
+    border: 1px solid #ff577f
 }
 
 .event-list>.event-empty>p {
     margin: 0;
-    color: #755eb5
+    color: #ff577f
 }
 
 .event-container {
@@ -412,12 +433,12 @@ tr.calendar-body .calendar-day .day[disabled] {
 
 .event-container>.event-info>p {
     margin: 0;
-    color: #5a5a5a
+    color: #ff577f;
 }
 
 .event-container>.event-info>p.event-title {
     position: relative;
-    font-size: 22px;
+    font-size: 20px;
     font-weight: 600
 }
 
@@ -446,7 +467,7 @@ tr.calendar-body .calendar-day .day[disabled] {
     width: -webkit-fit-content;
     width: -moz-fit-content;
     width: fit-content;
-    top: 130%;
+    top: 100%;
     left: 50%;
     -webkit-transform: translate(-50%, calc(-100% + -5px));
     -ms-transform: translate(-50%, calc(-100% + -5px));
@@ -459,8 +480,8 @@ tr.calendar-body .calendar-day .day[disabled] {
 }
 
 .event-indicator>.type-bullet>div {
-    width: 5px;
-    height: 5px;
+    width: 10px;
+    height: 10px;
     border-radius: 50%
 }
 
@@ -549,7 +570,7 @@ button.icon-button>span.chevron-arrow-right {
 
 @media screen and (max-width:1280px) {
     .calendar-inner {
-        padding: 50px 20px 70px 20px;
+        padding: 20px 20px 30px 20px;
         max-width: calc(100% - 580px)
     }
 
@@ -574,7 +595,7 @@ button.icon-button>span.chevron-arrow-right {
     }
 
     .calendar-inner {
-        padding: 50px 10px 70px 10px;
+        padding: 20px 10px 30px 10px;
         max-width: calc(100% - 475px);
         margin-left: 175px
     }
@@ -677,7 +698,7 @@ button.icon-button>span.chevron-arrow-right {
     }
 
     .calendar-inner {
-        padding: 50px 10px 70px 10px;
+        padding: 20px 10px 30px 10px;
         max-width: calc(100% - 425px);
         margin-left: 150px
     }
@@ -702,7 +723,7 @@ button.icon-button>span.chevron-arrow-right {
     }
 
     .calendar-inner {
-        padding: 50px 10px 70px 10px;
+        padding: 20px 10px 30px 10px;
         max-width: 100%;
         margin-left: 0
     }
@@ -802,7 +823,10 @@ button.icon-button>span.chevron-arrow-right {
     }
 }
 
-@media screen and (max-width:425px) {
+@media screen and (max-width:426px) {
+    .outer-calendar{
+        margin: 0px;
+    }
     .calendar-sidebar {
         width: 100%
     }
@@ -1081,18 +1105,18 @@ button.icon-button>span.chevron-arrow-right {
 }
 
 .orange-coral {
-    -webkit-box-shadow: 0 10px 50px -20px rgb(255, 153, 102, .65);
-    box-shadow: 0 10px 50px -20px rgb(255, 153, 102, .65);
-    border: 2px solid #fc9567
+    -webkit-box-shadow: 0 10px 50px -20px rgba(255, 255, 255, 0.65);
+    box-shadow: 0 10px 50px -20px rgba(255, 255, 255, 0.65);
+    border: 2px solid #ff0496
 }
 
 .orange-coral .calendar-sidebar {
-    background: #fc9567;
-    background: -o-linear-gradient(left, #ff5e62, #ff9966);
+    background: #6f69ac;
+    background: -o-linear-gradient(left, #6f69ac, #6f69ac);
     background: -webkit-gradient(linear, left top, right top, from(#ff5e62), to(#ff9966));
-    background: linear-gradient(to right, #ff5e62, #ff9966);
-    -webkit-box-shadow: 5px 0 18px -3px rgb(255, 152, 101);
-    box-shadow: 5px 0 18px -3px rgb(255, 152, 101)
+    background: linear-gradient(to right, #6f69ac, #6f69ac);
+    /* -webkit-box-shadow: 5px 0 18px -3px rgb(255, 152, 101); */
+    /* box-shadow: 5px 0 18px -3px rgb(255, 101, 178) */
 }
 
 .orange-coral.sidebar-hide .calendar-sidebar {
@@ -1114,15 +1138,15 @@ button.icon-button>span.chevron-arrow-right {
 
 .orange-coral .calendar-sidebar>span#sidebarToggler,
 .orange-coral #eventListToggler {
-    background-color: #ff9665;
-    -webkit-box-shadow: 0 0 18px -3px rgb(255, 153, 102, .65);
-    box-shadow: 0 0 18px -3px rgb(255, 153, 102, .65)
-}
+    background-color: #ff577f;
+    /* -webkit-box-shadow: 0 0 18px -3px rgb(255, 153, 102, .65);
+    box-shadow: 0 0 18px -3px rgb(255, 153, 102, .65) */
+} 
 
 .orange-coral th[colspan="7"] {
     position: relative;
-    font-size: 30px;
-    color: #fc9567
+    font-size: 25px;
+    color: #6f69ac
 }
 
 .orange-coral th[colspan="7"]::after {
@@ -1131,7 +1155,7 @@ button.icon-button>span.chevron-arrow-right {
     width: 92%;
     height: 1px;
     margin: 0 auto;
-    background: #f96
+    background: #c7bbe9
 }
 
 .orange-coral tr.calendar-body .calendar-day .day:hover {
@@ -1156,7 +1180,8 @@ button.icon-button>span.chevron-arrow-right {
 }
 
 .orange-coral .calendar-events {
-    background-color: #fff
+    background: #fbfbfb;
+    /* background: linear-gradient(90deg, rgba(255,87,127,1) 0%, rgba(255,154,140,1) 70%); */
 }
 
 .orange-coral .calendar-events::-webkit-scrollbar-thumb {
@@ -1174,28 +1199,28 @@ button.icon-button>span.chevron-arrow-right {
 }
 
 .orange-coral .event-list>.event-empty {
-    background-color: rgba(255, 150, 101, .15);
-    border: 1px solid #ff9665
+    background-color: rgba(255, 255, 255, 0.15);
+    border: 1px solid #ff577f
 }
 
 .orange-coral .event-list>.event-empty>p {
-    color: #ff6663
+    color: #ff577f
 }
 
 .orange-coral .event-container>.event-info>p.event-title>span {
-    color: #ff9665;
+    color: #ff65aa;
     background-color: rgba(255, 150, 101, .15);
-    border: 1px solid #ff9665
+    border: 1px solid #6f69ac
 }
 
 @media only screen and (max-width:768px) {
     .orange-coral .calendar-inner::after {
-        background-color: rgba(160, 131, 119, .5)
+        background-color: rgba(255, 87, 127, 0.15)
     }
 
     .orange-coral .calendar-events {
-        -webkit-box-shadow: -5px 0 18px -3px rgba(255, 152, 101, .5);
-        box-shadow: -5px 0 18px -3px rgba(255, 152, 101, .5)
+        -webkit-box-shadow: -5px 0 18px -3px rgba(255, 0, 157, 0.5);
+        box-shadow: -5px 0 18px -3px rgba(255, 0, 179, 0.5)
     }
 
     .orange-coral.event-hide .calendar-events {
@@ -1206,17 +1231,17 @@ button.icon-button>span.chevron-arrow-right {
 
 @media screen and (max-width:425px) {
     .orange-coral .calendar-sidebar>.calendar-year {
-        background: #fc9567;
-        background: -o-linear-gradient(left, #ff7b64, #f96);
+        background: #6f69ac;
+        background: -o-linear-gradient(left, #6f69ac, #6f69ac);
         background: -webkit-gradient(linear, left top, right top, from(#ff7b64), to(#f96));
-        background: linear-gradient(to right, #ff7b64, #f96);
-        -webkit-box-shadow: 0 5px 18px -3px rgba(152, 91, 61, .65);
-        box-shadow: 0 3px 8px -3px rgba(152, 91, 61, .65)
+        background: linear-gradient(to right, #6f69ac, #6f69ac);
+        -webkit-box-shadow: 0 5px 18px -3px rgba(255, 51, 177, 0.65);
+        box-shadow: 0 3px 8px -3px rgba(255, 0, 179, 0.65)
     }
 
     .orange-coral .calendar-sidebar>.month-list {
-        background: -o-linear-gradient(left, #ff5e62, #f96);
+        background: -o-linear-gradient(left, #6f69ac, #6f69ac);
         background: -webkit-gradient(linear, left top, right top, from(#ff5e62), to(#f96));
-        background: linear-gradient(to right, #ff5e62, #f96)
+        background: linear-gradient(to right, #6f69ac, #6f69ac)
     }
 }

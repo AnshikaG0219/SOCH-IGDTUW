@@ -28,6 +28,7 @@ body {
   align-items: center;
   flex-wrap: wrap;
   margin: auto;
+  margin-bottom: 300px;
   /* background-color: var(--light-blue); */
 }
 
